@@ -19,20 +19,28 @@ object ArrayPractice {
     //Access element in an Array
     println(s"Value of element a[1] = ${a(1)}")
 
-    //Method to find position of element in array
+    //Replace element in Array
+    println(s"Value before updating of element a[7]: ${a(7)}")
+    a(7)=11
+    println(s"Value after updating of element a[7]: ${a(7)}")
 
+    //Method to find position of element in array
     def elementPosition(arr: Array[Int], element: Int): Int = {
       val lengthOfArray = arr.length
-      var position = 0
+      var position = -1
       for(i<-0 until(lengthOfArray)){
         if(a(i) == element){
           position = i
-        } else {
-          position = 0
         }
       }
       position
     }
+
+    //Usage of method elementPosition - find position of element 9 in 'a' array
+    println(s"Position of 9 in 'a' array: ${elementPosition(a, 9)}")
+    println(s"Position of 99 in 'a' array: ${elementPosition(a, 99)}") //This will return -1 since the element is not defined in the 'a' array
+
+
 
 
   }
